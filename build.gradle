@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm' version '1.4.10'
+    id "com.github.johnrengelman.shadow" version "6.0.0"
+}
+
+group 'me.godead'
+version '1.0'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+    maven { url "https://hub.spigotmc.org/nexus/content/groups/public/" }
+}
+
+shadowJar {
+    minimize()
+}
+
+dependencies {
+    compileOnly "org.jetbrains.kotlin:kotlin-stdlib"
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    implementation 'com.github.GoDead:An_AntiCheat_Base:7faed9d'
+
+    compileOnly 'org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT'
+
+    compileOnly 'org.spigotmc:spigot-api:1.16.1-R0.1-SNAPSHOT'
+
+    compileOnly group: 'net.md-5', name: 'bungeecord-api', version: '1.8-SNAPSHOT'
+
+    compileOnly 'com.github.retrooper:packetevents:1.6.9'
+    implementation 'com.github.godead:lilliputian:0.1.13'
+
+    compileOnly 'org.projectlombok:lombok:1.18.12'
+    annotationProcessor 'org.projectlombok:lombok:1.18.12'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.12'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
+}

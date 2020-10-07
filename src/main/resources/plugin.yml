@@ -1,0 +1,4 @@
+name: Warden
+version: 1.1.0
+author: GoDead
+main: me.godead.warden.spigot.plugin.WardenPlugin
